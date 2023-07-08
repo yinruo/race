@@ -1,0 +1,46 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/sap/Z_SS23_T2_SRV/$metadata">
+        <edmx:Include Namespace="Z_SS23_T2_SRV"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
+            <Annotations Target="Z_SS23_T2_SRV.Skill">
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Name"/>
+                            <PropertyValue Property="Label" String="Skill Name"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SkillLevel"/>
+                            <PropertyValue Property="Label" String="Skill Level "/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CertiName"/>
+                            <PropertyValue Property="Label" String="Certification"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ConId"/>
+                            <PropertyValue Property="Label" String="Con Id"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>ConId</PropertyPath>
+                    </Collection>
+                </Annotation>
+
+            </Annotations>
+            <Annotations Target="Z_SS23_T2_SRV.Skill/ConId">
+                <Annotation Term="Common.FilterDefaultValue" String='001'/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

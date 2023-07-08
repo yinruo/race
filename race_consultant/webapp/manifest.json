@@ -1,7 +1,7 @@
 {
     "_version": "1.49.0",
     "sap.app": {
-        "id": "race",
+        "id": "raceconsultant",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
@@ -13,7 +13,7 @@
         "sourceTemplate": {
             "id": "@sap/generator-fiori:lrop",
             "version": "1.9.5",
-            "toolsId": "278f56f4-0f82-4322-8c1c-6379caa10654"
+            "toolsId": "1db17275-85e1-4417-a08a-0d4195f5c2c4"
         },
         "dataSources": {
             "mainService": {
@@ -74,7 +74,7 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "race.i18n.i18n"
+                    "bundleName": "raceconsultant.i18n.i18n"
                 }
             },
             "": {
@@ -103,6 +103,29 @@
             "targets": {}
         },
         "extends": {
+            "extensions": {
+                "sap.ui.controllerExtensions": {
+                    "sap.suite.ui.generic.template.ListReport.view.ListReport": {
+                        "controllerName": "raceconsultant.ext.controller.ListReportExt",
+                        "sap.ui.generic.app": {
+                            "SkillSet": {
+                                "EntitySet": "SkillSet",
+                                "Actions": {
+                                    "createSkill": {
+                                        "id": "createSkillButton",
+                                        "text": "Create new skill",
+                                        "press": "createSkill",
+                                        "requiresSelection": false,
+                                        "logicalAction": "Create"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "sap.ui.viewExtensions": {
+                }
+            }
         }
     },
     "sap.ui.generic.app": {
@@ -114,12 +137,13 @@
             "showDraftToggle": false
         },
         "pages": {
-            "ListReport|SkillConSet": {
-                "entitySet": "SkillConSet",
+            "ListReport|SkillSet": {
+                "entitySet": "SkillSet",
                 "component": {
                     "name": "sap.suite.ui.generic.template.ListReport",
                     "list": true,
                     "settings": {
+                        "editFlow":"direct",
                         "condensedTableLayout": true,
                         "smartVariantManagement": true,
                         "enableTableFilterInPageVariant": true,
@@ -131,11 +155,12 @@
                         "dataLoadSettings": {
                             "loadDataOnAppLaunch": "always"
                         }
+
                     }
                 },
                 "pages": {
-                    "ObjectPage|SkillConSet": {
-                        "entitySet": "SkillConSet",
+                    "ObjectPage|SkillSet": {
+                        "entitySet": "SkillSet",
                         "defaultLayoutTypeIfExternalNavigation": "MidColumnFullScreen",
                         "component": {
                             "name": "sap.suite.ui.generic.template.ObjectPage"
