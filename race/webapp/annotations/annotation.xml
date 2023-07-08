@@ -18,16 +18,35 @@
                 <Annotation Term="UI.LineItem">
                     <Collection>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="CName"/>
                             <PropertyValue Property="Label" String="Name"/>
+                            <PropertyValue Property="Value">
+                                <Apply Function="odata.concat">
+                                    <String>{CName}</String>
+                                </Apply>
+                            </PropertyValue>
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="CRole"/>
                             <PropertyValue Property="Label" String="Role"/>
+                            <PropertyValue Property="Value">
+                                <Apply Function="odata.concat">
+                                    <String>{CRole}</String>
+                                </Apply>
+                            </PropertyValue>
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="SLevel"/>
                             <PropertyValue Property="Label" String="Level"/>
+                            <PropertyValue Property="Value">
+                                <Apply Function="odata.concat">
+                                    <String>{SLevel}</String>
+                                </Apply>
+                            </PropertyValue>
+                        </Record>
+                        <Record Type="UI.DataFieldForIntentBasedNavigation">
+                            <PropertyValue Property="Action" String="onEmailPress"/>
+                            <PropertyValue Property="Label" String="{@i18n>contact}"/>
+                            <PropertyValue Property="RequiresContext" Bool="false"/>
+                            <PropertyValue Property="SemanticObject" String="Email"/>
+                            <PropertyValue Property="Inline" Bool="true"/>
                         </Record>
                     </Collection>
                 </Annotation>
