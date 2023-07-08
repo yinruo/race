@@ -34,7 +34,21 @@
                     "localUri": "annotations/annotation.xml"
                 }
             }
-        }
+        },
+        "crossNavigation": {
+            "inbounds": {
+              "email": {
+                "semanticObject": "Action",
+                "action": "email",
+                "title": "Email",
+                "icon": "sap-icon://email",
+                "signature": {
+                  "parameters": {},
+                  "additionalParameters": "allowed"
+                }
+              }
+            }
+          } 
     },
     "sap.ui": {
         "technology": "UI5",
