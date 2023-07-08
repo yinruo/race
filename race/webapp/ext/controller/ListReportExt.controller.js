@@ -39,6 +39,12 @@ sap.ui.define([
                     oBindingParams.filters.push(new Filter("SName", "EQ", vCategory));
                 }
             }
+        },
+        onEmailPress: function (oEvent) {
+            var oButton = oEvent.getSource();
+            var oContext = oButton.getBindingContext();
+            var sEmail = oContext.getProperty("CEmail");
+            window.location.href = "mailto:" + sEmail;
         }
     };
 });
