@@ -1,4 +1,7 @@
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
     <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
         <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
     </edmx:Reference>
@@ -8,17 +11,27 @@
     <edmx:DataServices>
         <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
             <Annotations Target="Z_SS23_T2_SRV.SkillCon">
-                <Annotation Term="UI.SelectionFields">
-                    <Collection>
-                        <PropertyPath>SName</PropertyPath>
-                        <PropertyPath>SLevel</PropertyPath>
-                        <PropertyPath>CRole</PropertyPath>
-                    </Collection>
+                 <Annotation Term="UI.FieldGroup" Qualifier="Filters">
+                    <Record Type="UI.FieldGroupType">
+                        <PropertyValue Property="Label" String="{@i18n>filters}"/>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="SName"/>
+                                    <PropertyValue Property="Label" String="{@i18n>filterBySkill}"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="SLevel"/>
+                                    <PropertyValue Property="Label" String="{@i18n>filterBySkillLevel}"/>
+                                </Record>+
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
                 </Annotation>
                 <Annotation Term="UI.LineItem">
                     <Collection>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Label" String="Name"/>
+                            <PropertyValue Property="Label" String="{@i18n>name}"/>
                             <PropertyValue Property="Value">
                                 <Apply Function="odata.concat">
                                     <String>{CName}</String>
@@ -26,7 +39,7 @@
                             </PropertyValue>
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Label" String="Role"/>
+                            <PropertyValue Property="Label" String="{@i18n>role}"/>
                             <PropertyValue Property="Value">
                                 <Apply Function="odata.concat">
                                     <String>{CRole}</String>
@@ -34,7 +47,7 @@
                             </PropertyValue>
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Label" String="Level"/>
+                            <PropertyValue Property="Label" String="{@i18n>level}"/>
                             <PropertyValue Property="Value">
                                 <Apply Function="odata.concat">
                                     <String>{SLevel}</String>
@@ -49,6 +62,38 @@
                             <PropertyValue Property="Inline" Bool="true"/>
                         </Record>
                     </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="Z_SS23_T2_SRV.SkillCon/SName">
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="ValueListProperty" String="Name"/>
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="SName"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="CollectionPath" String="SkNameSet"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="Z_SS23_T2_SRV.SkillCon/SLevel">
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="ValueListProperty" String="SkillLevel"/>
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="SLevel"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="CollectionPath" String="SkLevelSet"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                    </Record>
                 </Annotation>
             </Annotations>
         </Schema>
