@@ -117,6 +117,15 @@
             "targets": {}
         },
         "extends": {
+            "extensions": {
+                "sap.ui.controllerExtensions": {
+                    "sap.suite.ui.generic.template.ListReport.view.ListReport": {
+                        "controllerName": "race.ext.controller.ListReportExt",
+                        "sap.ui.generic.app": {}
+                    }
+                },
+                "sap.ui.viewExtensions": {}
+            }
         }
     },
     "sap.ui.generic.app": {
