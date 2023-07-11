@@ -107,24 +107,10 @@
                 "sap.ui.controllerExtensions": {
                     "sap.suite.ui.generic.template.ListReport.view.ListReport": {
                         "controllerName": "raceconsultant.ext.controller.ListReportExt",
-                        "sap.ui.generic.app": {
-                            "SkillSet": {
-                                "EntitySet": "SkillSet",
-                                "Actions": {
-                                    "createSkill": {
-                                        "id": "createSkillButton",
-                                        "text": "Create new skill",
-                                        "press": "createSkill",
-                                        "requiresSelection": false,
-                                        "logicalAction": "Create"
-                                    }
-                                }
-                            }
-                        }
+                        "sap.ui.generic.app": {}
                     }
                 },
-                "sap.ui.viewExtensions": {
-                }
+                "sap.ui.viewExtensions": {}
             }
         }
     },
@@ -143,7 +129,7 @@
                     "name": "sap.suite.ui.generic.template.ListReport",
                     "list": true,
                     "settings": {
-                        "editFlow":"direct",
+                        "editFlow": "direct",
                         "condensedTableLayout": true,
                         "smartVariantManagement": true,
                         "enableTableFilterInPageVariant": true,
@@ -154,8 +140,12 @@
                         },
                         "dataLoadSettings": {
                             "loadDataOnAppLaunch": "always"
+                        },
+                        "tableSettings": {
+                            "multiEdit": {
+                                "enabled": true
+                            }
                         }
-
                     }
                 },
                 "pages": {
@@ -163,7 +153,12 @@
                         "entitySet": "SkillSet",
                         "defaultLayoutTypeIfExternalNavigation": "MidColumnFullScreen",
                         "component": {
-                            "name": "sap.suite.ui.generic.template.ObjectPage"
+                            "name": "sap.suite.ui.generic.template.ObjectPage",
+                            "settings": {
+                                "simpleHeaderFacets": true,
+                                "showRelatedApps": true,
+                                "allowDeepLinking": true
+                            }
                         }
                     }
                 }

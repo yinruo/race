@@ -33,9 +33,9 @@
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Label" String="{@i18n>name}"/>
                             <PropertyValue Property="Value">
-                                <Apply Function="odata.concat">
+                                 <Apply Function="odata.concat">
                                     <String>{CName}</String>
-                                </Apply>
+                                </Apply> 
                             </PropertyValue>
                         </Record>
                         <Record Type="UI.DataField">

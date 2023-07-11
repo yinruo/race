@@ -1,4 +1,7 @@
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Capabilities.V1.xml">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
     <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
         <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
     </edmx:Reference>
@@ -10,6 +13,9 @@
     </edmx:Reference>
     <edmx:DataServices>
         <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
+            <Annotations Target="Z_SS23_T2_SRV.Skill/ConId">
+                <Annotation Term="Common.FilterDefaultValue" String='001'/>
+            </Annotations>
             <Annotations Target="Z_SS23_T2_SRV.Skill">
                 <Annotation Term="UI.LineItem">
                     <Collection>
@@ -31,16 +37,8 @@
                         </Record>
                     </Collection>
                 </Annotation>
-                <Annotation Term="UI.SelectionFields">
-                    <Collection>
-                        <PropertyPath>ConId</PropertyPath>
-                    </Collection>
-                </Annotation>
+            </Annotations>
 
-            </Annotations>
-            <Annotations Target="Z_SS23_T2_SRV.Skill/ConId">
-                <Annotation Term="Common.FilterDefaultValue" String='001'/>
-            </Annotations>
         </Schema>
     </edmx:DataServices>
 </edmx:Edmx>
