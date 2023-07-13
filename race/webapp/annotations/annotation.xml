@@ -23,7 +23,7 @@
                                 <Record Type="UI.DataField">
                                     <PropertyValue Property="Value" Path="SLevel"/>
                                     <PropertyValue Property="Label" String="{@i18n>filterBySkillLevel}"/>
-                                </Record>
+                                </Record>+
                             </Collection>
                         </PropertyValue>
                     </Record>
@@ -33,9 +33,9 @@
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Label" String="{@i18n>name}"/>
                             <PropertyValue Property="Value">
-                                 <Apply Function="odata.concat">
+                                <Apply Function="odata.concat">
                                     <String>{CName}</String>
-                                </Apply> 
+                                </Apply>
                             </PropertyValue>
                         </Record>
                         <Record Type="UI.DataField">
@@ -53,13 +53,6 @@
                                     <String>{SLevel}</String>
                                 </Apply>
                             </PropertyValue>
-                        </Record>
-                        <Record Type="UI.DataFieldForIntentBasedNavigation">
-                            <PropertyValue Property="Action" String="onEmailPress"/>
-                            <PropertyValue Property="Label" String="{@i18n>contact}"/>
-                            <PropertyValue Property="RequiresContext" Bool="false"/>
-                            <PropertyValue Property="SemanticObject" String="Email"/>
-                            <PropertyValue Property="Inline" Bool="true"/>
                         </Record>
                     </Collection>
                 </Annotation>
@@ -80,7 +73,7 @@
                     </Record>
                 </Annotation>
             </Annotations>
-                        <Annotations Target="Z_SS23_T2_SRV.SkillCon/SLevel">
+            <Annotations Target="Z_SS23_T2_SRV.SkillCon/SLevel">
                 <Annotation Term="Common.ValueList">
                     <Record Type="Common.ValueListType">
                         <PropertyValue Property="Parameters">
