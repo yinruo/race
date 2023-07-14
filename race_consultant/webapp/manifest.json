@@ -113,7 +113,7 @@
                                 "Actions": {
                                     "createSkill": {
                                         "id": "createSkillButton",
-                                        "text": "create skill",
+                                        "text": "Create Skill",
                                         "press": "createSkill",
                                         "requiresSelection": false,
                                         "logicalAction": "Create"
@@ -157,20 +157,6 @@
                         "tableSettings": {
                             "multiEdit": {
                                 "enabled": true
-                            }
-                        }
-                    }
-                },
-                "pages": {
-                    "ObjectPage|SkillSet": {
-                        "entitySet": "SkillSet",
-                        "defaultLayoutTypeIfExternalNavigation": "MidColumnFullScreen",
-                        "component": {
-                            "name": "sap.suite.ui.generic.template.ObjectPage",
-                            "settings": {
-                                "simpleHeaderFacets": true,
-                                "showRelatedApps": true,
-                                "allowDeepLinking": true
                             }
                         }
                     }
