@@ -130,6 +130,12 @@
                                         "text": "Contact",
                                         "press": "onEmailPress",
                                         "requiresSelection": true
+                                    },
+                                    "onCertificatePress": {
+                                        "id": "onCertificatePressButton",
+                                        "text": "View Certificate",
+                                        "press": "onCertificatePress",
+                                        "requiresSelection": true
                                     }
                                 }
                             }
