@@ -37,16 +37,16 @@
         },
         "crossNavigation": {
             "inbounds": {
-                "email": {
-                    "semanticObject": "Action",
-                    "action": "email",
-                    "title": "Email",
-                    "icon": "sap-icon://email",
-                    "signature": {
-                        "parameters": {},
-                        "additionalParameters": "allowed"
-                    }
-                }
+                  "email": {
+                        "semanticObject": "Action",
+                        "action": "email",
+                        "title": "Email",
+                        "icon": "sap-icon://email",
+                        "signature": {
+                              "parameters": {},
+                              "additionalParameters": "allowed"
+                        }
+                  }
             }
         }
     },
@@ -127,10 +127,9 @@
                                 "Actions": {
                                     "onEmailPress": {
                                         "id": "onEmailPressButton",
-                                        "text": "Email",
+                                        "text": "Contact",
                                         "press": "onEmailPress",
-                                        "requiresSelection": true,
-                                        "logicalAction": "Delete"
+                                        "requiresSelection": true
                                     }
                                 }
                             }
