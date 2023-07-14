@@ -37,16 +37,16 @@
         },
         "crossNavigation": {
             "inbounds": {
-                "email": {
-                    "semanticObject": "Action",
-                    "action": "email",
-                    "title": "Email",
-                    "icon": "sap-icon://email",
-                    "signature": {
-                        "parameters": {},
-                        "additionalParameters": "allowed"
-                    }
-                }
+                  "email": {
+                        "semanticObject": "Action",
+                        "action": "email",
+                        "title": "Email",
+                        "icon": "sap-icon://email",
+                        "signature": {
+                              "parameters": {},
+                              "additionalParameters": "allowed"
+                        }
+                  }
             }
         }
     },
