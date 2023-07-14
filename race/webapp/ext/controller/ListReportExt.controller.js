@@ -13,6 +13,15 @@ sap.ui.define([
             var oContext = oButton.getBindingContext();
             var sEmail = oContext.getProperty("CEmail");
             window.location.href = "mailto:" + sEmail;
+        },
+        contact: function(oEvent) {
+        MessageToast.show("Custom handler invoked.");
+        },
+        contact: function(oEvent) {
+        MessageToast.show("Custom handler invoked.");
+        },
+        emailPress: function(oEvent) {
+        MessageToast.show("Custom handler invoked.");
         }
     };
 });

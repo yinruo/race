@@ -37,18 +37,18 @@
         },
         "crossNavigation": {
             "inbounds": {
-              "email": {
-                "semanticObject": "Action",
-                "action": "email",
-                "title": "Email",
-                "icon": "sap-icon://email",
-                "signature": {
-                  "parameters": {},
-                  "additionalParameters": "allowed"
+                "email": {
+                    "semanticObject": "Action",
+                    "action": "email",
+                    "title": "Email",
+                    "icon": "sap-icon://email",
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    }
                 }
-              }
             }
-          } 
+        }
     },
     "sap.ui": {
         "technology": "UI5",
@@ -121,7 +121,20 @@
                 "sap.ui.controllerExtensions": {
                     "sap.suite.ui.generic.template.ListReport.view.ListReport": {
                         "controllerName": "race.ext.controller.ListReportExt",
-                        "sap.ui.generic.app": {}
+                        "sap.ui.generic.app": {
+                            "SkillConSet": {
+                                "EntitySet": "SkillConSet",
+                                "Actions": {
+                                    "onEmailPress": {
+                                        "id": "onEmailPressButton",
+                                        "text": "Email",
+                                        "press": "onEmailPress",
+                                        "requiresSelection": true,
+                                        "logicalAction": "Delete"
+                                    }
+                                }
+                            }
+                        }
                     }
                 },
                 "sap.ui.viewExtensions": {}
