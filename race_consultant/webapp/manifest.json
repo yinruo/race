@@ -160,20 +160,6 @@
                             }
                         }
                     }
-                },
-                "pages": {
-                    "ObjectPage|SkillSet": {
-                        "entitySet": "SkillSet",
-                        "defaultLayoutTypeIfExternalNavigation": "MidColumnFullScreen",
-                        "component": {
-                            "name": "sap.suite.ui.generic.template.ObjectPage",
-                            "settings": {
-                                "simpleHeaderFacets": true,
-                                "showRelatedApps": true,
-                                "allowDeepLinking": true
-                            }
-                        }
-                    }
                 }
             }
         }
