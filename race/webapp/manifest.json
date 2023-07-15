@@ -37,16 +37,16 @@
         },
         "crossNavigation": {
             "inbounds": {
-                  "email": {
-                        "semanticObject": "Action",
-                        "action": "email",
-                        "title": "Email",
-                        "icon": "sap-icon://email",
-                        "signature": {
-                              "parameters": {},
-                              "additionalParameters": "allowed"
-                        }
-                  }
+                "email": {
+                    "semanticObject": "Action",
+                    "action": "email",
+                    "title": "Email",
+                    "icon": "sap-icon://email",
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    }
+                }
             }
         }
     },
@@ -125,24 +125,27 @@
                             "SkillConSet": {
                                 "EntitySet": "SkillConSet",
                                 "Actions": {
-                                    "onEmailPress": {
-                                        "id": "onEmailPressButton",
-                                        "text": "Contact",
-                                        "press": "onEmailPress",
-                                        "requiresSelection": true
-                                    },
-                                    "onCertificatePress": {
-                                        "id": "onCertificatePressButton",
-                                        "text": "View Certificate",
-                                        "press": "onCertificatePress",
-                                        "requiresSelection": true
-                                    }
+
                                 }
                             }
                         }
                     }
                 },
-                "sap.ui.viewExtensions": {}
+                "sap.ui.viewExtensions": {
+                    "sap.suite.ui.generic.template.ListReport.view.ListReport": {
+                        "ResponsiveTableColumnsExtension|SkillConSet": {
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "race.ext.fragments.ResponsiveTableColumns",
+                            "type": "XML"
+                        },
+                        "ResponsiveTableCellsExtension|SkillConSet": {
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "race.ext.fragments.ResponsiveTableCells",
+                            "type": "XML"
+                        }
+                    },
+                    "sap.suite.ui.generic.template.ObjectPage.view.Details": {}
+                }
             }
         }
     },

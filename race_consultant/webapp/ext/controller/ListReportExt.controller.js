@@ -78,7 +78,7 @@ sap.ui.define([
                         Name : sap.ui.getCore().byId("name").getSelectedItem().getText(),
                         SkillLevel : sap.ui.getCore().byId("skilllevel").getSelectedItem().getText(),
                         CertiName : sap.ui.getCore().byId("certiname").getValue(),
-                        CertiLink : sap.ui.getCore().byId("certifilink").getValue(),
+                        CertiLink : sap.ui.getCore().byId("certilink").getValue(),
                         ConId : '001',                                                                    
                     };
                     
@@ -147,8 +147,14 @@ sap.ui.define([
             dialog.open(); 
         },
 
-        editSKill: function(oEvent) {
+        editSkill: function(oEvent) {
         MessageToast.show("Custom handler invoked.");
-        }
+        },
+        
+        handleCertificationPress: function(oEvent) {
+            var sCertiLink = oEvent.getSource().getBindingContext().getProperty("CertiLink");
+            var absoluteURL = "https://" + sCertiLink; 
+            window.open(absoluteURL, "_blank");
+            }
     };
 });
