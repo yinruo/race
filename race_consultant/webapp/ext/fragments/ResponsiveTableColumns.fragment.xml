@@ -3,7 +3,7 @@
     <Column id="textColumn">
         <Text text="Extension Column"/>
         <customData>
-            <core:CustomData key="p13nData" value="\{&quot;columnKey&quot;: &quot;CustomColumn1&quot;, &quot;leadingProperty&quot;: &quot;Name&quot;, &quot;columnIndex&quot;: &quot;101&quot;}"/>
+            <core:CustomData key="p13nData" value='\{"columnKey": "CustomColumn1", "leadingProperty":"CertiLink", "additionalProperty": "CertiName", "columnIndex" : "101"}' />
         </customData>
     </Column>
 </core:FragmentDefinition>

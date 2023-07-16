@@ -113,17 +113,37 @@
                                 "Actions": {
                                     "createSkill": {
                                         "id": "createSkillButton",
-                                        "text": "Create Skill",
+                                        "text": "create",
                                         "press": "createSkill",
                                         "requiresSelection": false,
                                         "logicalAction": "Create"
+                                    },
+                                    "editSkill": {
+                                        "id": "editSkillButton",
+                                        "text": "edit",
+                                        "press": "editSkill",
+                                        "requiresSelection": true
                                     }
                                 }
                             }
                         }
                     }
                 },
-                "sap.ui.viewExtensions": {}
+                "sap.ui.viewExtensions": {
+                    "sap.suite.ui.generic.template.ListReport.view.ListReport": {
+                        "ResponsiveTableColumnsExtension|SkillSet": {
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "raceconsultant.ext.fragments.ResponsiveTableColumns",
+                            "type": "XML"
+                        },
+                        "ResponsiveTableCellsExtension|SkillSet": {
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "raceconsultant.ext.fragments.ResponsiveTableCells",
+                            "type": "XML"
+                        }
+                    },
+                    "sap.suite.ui.generic.template.ObjectPage.view.Details": {}
+                }
             }
         }
     },

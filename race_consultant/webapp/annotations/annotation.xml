@@ -27,14 +27,6 @@
                             <PropertyValue Property="Value" Path="SkillLevel"/>
                             <PropertyValue Property="Label" String="Skill Level "/>
                         </Record>
-                        <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="CertiName"/>
-                            <PropertyValue Property="Label" String="Certification"/>
-                        </Record>
-                        <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="ConId"/>
-                            <PropertyValue Property="Label" String="Con Id"/>
-                        </Record>
                     </Collection>
                 </Annotation>
             </Annotations>

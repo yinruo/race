@@ -1,0 +1,4 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+  <Button text="{CertiName}" visible="{= ${CertiName} !== ''}" press="handleCertificationPress" />
+  <Button icon="sap-icon://email" press="handleEmailPress" />  
+</core:FragmentDefinition>

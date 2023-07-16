@@ -32,27 +32,19 @@
                     <Collection>
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Label" String="{@i18n>name}"/>
-                            <PropertyValue Property="Value">
-                                <Apply Function="odata.concat">
-                                    <String>{CName}</String>
-                                </Apply>
-                            </PropertyValue>
+                            <PropertyValue Property="Value" Path = "CName"/>
                         </Record>
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Label" String="{@i18n>role}"/>
-                            <PropertyValue Property="Value">
-                                <Apply Function="odata.concat">
-                                    <String>{CRole}</String>
-                                </Apply>
-                            </PropertyValue>
+                            <PropertyValue Property="Value" Path = "CRole"/>
                         </Record>
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Label" String="{@i18n>level}"/>
-                            <PropertyValue Property="Value">
-                                <Apply Function="odata.concat">
-                                    <String>{SLevel}</String>
-                                </Apply>
-                            </PropertyValue>
+                            <PropertyValue Property="Value" Path = "SName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{@i18n>level}"/>
+                            <PropertyValue Property="Value" Path = "SLevel"/>
                         </Record>
                     </Collection>
                 </Annotation>
