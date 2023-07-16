@@ -18,7 +18,7 @@ sap.ui.define([
             var oModel = new sap.ui.model.odata.v2.ODataModel("/sap/opu/odata/sap/Z_SS23_T2_SRV");
 
             var skillNames = [];
-            var skillNamesEndpoint = "/SkNameSet";
+            var skillNamesEndpoint = "/SNameSet";
             var onSuccessName = function(oData) {
                 var results = oData.results;
             
