@@ -3,13 +3,13 @@
     <Column id="textColumn">
         <Text text="Certification"/>
         <customData>
-            <core:CustomData key="p13nData" value='\{"columnKey": "CustomColumn1", "leadingProperty":"CertiName", "additionalProperty": "CertiLink", "columnIndex" : "101"}'/>
+            <core:CustomData key="p13nData" value="\{&quot;columnKey&quot;: &quot;CustomColumn1&quot;, &quot;leadingProperty&quot;: &quot;CertiName&quot;, &quot;additionalProperty&quot;: &quot;CertiLink&quot;, &quot;columnIndex&quot;: &quot;101&quot;}"/>
         </customData>
     </Column>
     <Column id="textColumn2">
         <Text text="Email"/>
         <customData>
-            <core:CustomData key="p13nData" value='\{"columnKey": "CustomColumn1", "leadingProperty":"CEmail", "columnIndex" : "101"}'/>
+            <core:CustomData key="p13nData" value="\{&quot;columnKey&quot;: &quot;CustomColumn1&quot;, &quot;leadingProperty&quot;: &quot;CEmail&quot;, &quot;columnIndex&quot;: &quot;101&quot;}"/>
         </customData>
     </Column>
 </core:FragmentDefinition>
