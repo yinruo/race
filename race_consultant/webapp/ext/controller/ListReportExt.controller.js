@@ -23,13 +23,15 @@ sap.ui.define([
                         Name : sap.ui.getCore().byId("name").getValue(),
                         SkillLevel : sap.ui.getCore().byId("skilllevel").getValue(),
                         CertiName : sap.ui.getCore().byId("certification").getValue(),
-                        ConId : sap.ui.getCore().byId("conid").getValue(),                                                                    
+                        CertiLink : sap.ui.getCore().byId("certification_link").getValue(),
+                        ConId : "001"                                                                 
                     };
                     
                     oModel.create('/SkillSet', oNewTable, {
                         success: function(oData, oResponce) {
                             sap.m.MessageToast.show("Skill successfully created!");
                             oModel.refresh();
+                            dialog.close();
                         },
                         error :function(oError){
                             sap.m.MessageToast.show("Error during skill creation.")
@@ -38,39 +40,37 @@ sap.ui.define([
                 }
             });
              var dialog = new Dialog("dialogCancellationReasons", {
-                title: "Create Table",
+                title: "Create Skill",
                 modal : true,
                 contentWidth : "1em",
                 buttons: [ saveButton],
                 content : [
                      new sap.m.Label({
-                        text: "Name"
+                        text: "Skill Name"
                     }), new sap.m.Input({
                         maxLength:40,
                         id: "name",
-                        placeholder : "e.g. 001"
+                        placeholder : "e.g. CSS"
                     }), 
                     new sap.m.Label({
-                        text: "Skill level"
+                        text: "Skill Level"
                     }), new sap.m.Input({
                         maxLength:40,
                         id: "skilllevel",
-                        placeholder : "e.g. 001"
+                        placeholder : "e.g. PROFESSIONAL"
                     }), 
                     new sap.m.Label({
-                        text: "conid"
-                    }), new sap.m.Input({
-                        maxLength:40,
-                        id: "conid",
-                        placeholder : "e.g. 001"
-                    }), 
-                    new sap.m.Label({
-                        text: "Certification"
+                        text: "Certification Name"
                     }),  new sap.m.Input({
                         maxLength:100,
                         id: "certification",
-                        placeholder : "0000"
-                    }),
+                        placeholder : "Introduction to CSS"
+                    }),new sap.m.Label({
+                        text: "Certification Link"
+                    }),  new sap.m.Input({
+                        maxLength:100,
+                        id: "certification_link"
+                    })
                 ]
             });
             

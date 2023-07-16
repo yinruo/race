@@ -37,16 +37,16 @@
         },
         "crossNavigation": {
             "inbounds": {
-                  "email": {
-                        "semanticObject": "Action",
-                        "action": "email",
-                        "title": "Email",
-                        "icon": "sap-icon://email",
-                        "signature": {
-                              "parameters": {},
-                              "additionalParameters": "allowed"
-                        }
-                  }
+                "email": {
+                    "semanticObject": "Action",
+                    "action": "email",
+                    "title": "Email",
+                    "icon": "sap-icon://email",
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    }
+                }
             }
         }
     },
@@ -171,15 +171,6 @@
                         },
                         "dataLoadSettings": {
                             "loadDataOnAppLaunch": "always"
-                        }
-                    }
-                },
-                "pages": {
-                    "ObjectPage|SkillConSet": {
-                        "entitySet": "SkillConSet",
-                        "defaultLayoutTypeIfExternalNavigation": "MidColumnFullScreen",
-                        "component": {
-                            "name": "sap.suite.ui.generic.template.ObjectPage"
                         }
                     }
                 }
