@@ -19,6 +19,7 @@ sap.ui.define([
         
             var skillNames = [];
             var skillNamesEndpoint = "/SNameSet";
+            var skillNamesEndpoint = "/SNameSet";
             var onSuccessName = function(oData) {
                 var results = oData.results;
         

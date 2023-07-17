@@ -177,15 +177,6 @@
                             "loadDataOnAppLaunch": "always"
                         }
                     }
-                },
-                "pages": {
-                    "ObjectPage|SkillConSet": {
-                        "entitySet": "SkillConSet",
-                        "defaultLayoutTypeIfExternalNavigation": "MidColumnFullScreen",
-                        "component": {
-                            "name": "sap.suite.ui.generic.template.ObjectPage"
-                        }
-                    }
                 }
             }
         }
