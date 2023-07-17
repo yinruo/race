@@ -1,6 +1,6 @@
 specVersion: "2.6"
 metadata:
-  name: race
+  name: racemanager
 type: application
 server:
   customMiddleware:

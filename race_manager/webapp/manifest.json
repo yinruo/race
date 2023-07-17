@@ -1,7 +1,7 @@
 {
     "_version": "1.49.0",
     "sap.app": {
-        "id": "race",
+        "id": "racemanager",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
@@ -13,7 +13,7 @@
         "sourceTemplate": {
             "id": "@sap/generator-fiori:lrop",
             "version": "1.9.5",
-            "toolsId": "278f56f4-0f82-4322-8c1c-6379caa10654"
+            "toolsId": "9580843a-849f-4540-a346-a6ed6743a44a"
         },
         "dataSources": {
             "mainService": {
@@ -32,21 +32,6 @@
                 "uri": "annotations/annotation.xml",
                 "settings": {
                     "localUri": "annotations/annotation.xml"
-                }
-            }
-            
-        },
-        "crossNavigation": {
-            "inbounds": {
-                "email": {
-                    "semanticObject": "Action",
-                    "action": "email",
-                    "title": "Email",
-                    "icon": "sap-icon://email",
-                    "signature": {
-                        "parameters": {},
-                        "additionalParameters": "allowed"
-                    }
                 }
             }
         }
@@ -68,9 +53,9 @@
         }
     },
     "sap.ui5": {
-        "flexEnabled": false,
+        "flexEnabled": true,
         "dependencies": {
-            "minUI5Version": "1.115.1",
+            "minUI5Version": "1.116.0",
             "libs": {
                 "sap.m": {},
                 "sap.ui.core": {},
@@ -89,7 +74,7 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "race.i18n.i18n"
+                    "bundleName": "racemanager.i18n.i18n"
                 }
             },
             "": {
@@ -121,31 +106,28 @@
             "extensions": {
                 "sap.ui.controllerExtensions": {
                     "sap.suite.ui.generic.template.ListReport.view.ListReport": {
-                        "controllerName": "race.ext.controller.ListReportExt",
+                        "controllerName": "racemanager.ext.controller.ListReportExt",
                         "sap.ui.generic.app": {
-                            "SkillConSet": {
-                                "EntitySet": "SkillConSet",
+                            "SNameSet": {
+                                "EntitySet": "SNameSet",
                                 "Actions": {
-
+                                    "createSkill": {
+                                        "id": "createSkillButton",
+                                        "text": "Create ",
+                                        "press": "createSkill",
+                                        "requiresSelection": false,
+                                        "logicalAction": "Create"
+                                    },
+                                    "editSkill": {
+                                        "id": "editSkillButton",
+                                        "text": "Edit",
+                                        "press": "editSkill",
+                                        "requiresSelection": true
+                                    }
                                 }
                             }
                         }
                     }
-                },
-                "sap.ui.viewExtensions": {
-                    "sap.suite.ui.generic.template.ListReport.view.ListReport": {
-                        "ResponsiveTableColumnsExtension|SkillConSet": {
-                            "className": "sap.ui.core.Fragment",
-                            "fragmentName": "race.ext.fragments.ResponsiveTableColumns",
-                            "type": "XML"
-                        },
-                        "ResponsiveTableCellsExtension|SkillConSet": {
-                            "className": "sap.ui.core.Fragment",
-                            "fragmentName": "race.ext.fragments.ResponsiveTableCells",
-                            "type": "XML"
-                        }
-                    },
-                    "sap.suite.ui.generic.template.ObjectPage.view.Details": {}
                 }
             }
         }
@@ -159,8 +141,8 @@
             "showDraftToggle": false
         },
         "pages": {
-            "ListReport|SkillConSet": {
-                "entitySet": "SkillConSet",
+            "ListReport|SNameSet": {
+                "entitySet": "SNameSet",
                 "component": {
                     "name": "sap.suite.ui.generic.template.ListReport",
                     "list": true,
@@ -179,8 +161,8 @@
                     }
                 },
                 "pages": {
-                    "ObjectPage|SkillConSet": {
-                        "entitySet": "SkillConSet",
+                    "ObjectPage|SNameSet": {
+                        "entitySet": "SNameSet",
                         "defaultLayoutTypeIfExternalNavigation": "MidColumnFullScreen",
                         "component": {
                             "name": "sap.suite.ui.generic.template.ObjectPage"

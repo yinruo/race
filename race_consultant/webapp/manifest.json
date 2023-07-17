@@ -34,6 +34,7 @@
                     "localUri": "annotations/annotation.xml"
                 }
             }
+            
         }
     },
     "sap.ui": {
@@ -117,12 +118,6 @@
                                         "press": "createSkill",
                                         "requiresSelection": false,
                                         "logicalAction": "Create"
-                                    },
-                                    "editSkill": {
-                                        "id": "editSkillButton",
-                                        "text": "edit",
-                                        "press": "editSkill",
-                                        "requiresSelection": true
                                     }
                                 }
                             }
