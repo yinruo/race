@@ -9,7 +9,6 @@
     <Column id="textColumn2">
         <Text/>
         <customData>
-            <core:CustomData key="p13nData" value="\{&quot;columnKey&quot;: &quot;CustomColumn1&quot;, &quot;leadingProperty&quot;: &quot;Id&quot;, &quot;additionalProperty&quot;: &quot;SkillLevel&quot;, &quot;columnIndex&quot;: &quot;101&quot;}"/>
             <core:CustomData key="p13nData" value="\{&quot;columnKey&quot;: &quot;CustomColumn1&quot;, &quot;leadingProperty&quot;: &quot;CertiLink&quot;, &quot;additionalProperty&quot;: &quot;CertiName&quot;, &quot;columnIndex&quot;: &quot;101&quot;}"/>
         </customData>
     </Column>
