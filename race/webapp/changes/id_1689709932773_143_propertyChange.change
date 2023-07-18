@@ -1,0 +1,41 @@
+{
+    "fileName": "id_1689709932773_143_propertyChange",
+    "fileType": "change",
+    "changeType": "propertyChange",
+    "moduleName": "",
+    "reference": "race",
+    "packageName": "",
+    "content": {
+        "property": "showHeaderContent",
+        "newValue": true
+    },
+    "selector": {
+        "id": "race::sap.suite.ui.generic.template.ObjectPage.view.Details::SkillConSet--objectPage",
+        "idIsLocal": false,
+        "type": "sap.uxap.ObjectPageLayout"
+    },
+    "layer": "CUSTOMER_BASE",
+    "texts": {},
+    "namespace": "apps/race/changes/",
+    "projectId": "",
+    "creation": 1689709932773,
+    "originalLanguage": "",
+    "support": {
+        "generator": "changeUtils: SAPFioriTools",
+        "service": "",
+        "user": "",
+        "sapui5Version": "1.115.1",
+        "sourceChangeFileName": "",
+        "compositeCommand": ""
+    },
+    "oDataInformation": {},
+    "dependentSelector": {},
+    "validAppVersions": {
+        "from": "0.0.1",
+        "to": "0.0.1",
+        "creation": "0.0.1"
+    },
+    "jsOnly": false,
+    "variantReference": "",
+    "appDescriptorChange": false
+}
