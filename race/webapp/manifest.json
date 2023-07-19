@@ -124,7 +124,14 @@
                         "sap.ui.generic.app": {
                             "SkillConSet": {
                                 "EntitySet": "SkillConSet",
-                                "Actions": {}
+                                "Actions": {
+                                    "skillPie": {
+                                        "id": "skillPieButton",
+                                        "text": "Show pie view",
+                                        "press": "skillPie",
+                                        "requiresSelection": false
+                                    }
+                                }
                             }
                         }
                     }

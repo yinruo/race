@@ -63,6 +63,26 @@ sap.ui.define([
             var onErrorLevel = function(oError) {
                 sap.m.MessageToast.show("Error retrieving skill names from the backend.");
             };
+
+            var savedSkillNames = [];
+
+            var isSkillNameAlreadyCreated = function(name) {
+                return savedSkillNames.includes(name);
+            };
+            
+            oModel.read("/SkillSet", {
+                success: function(oData) {
+                    var results = oData.results;
+                    for (var i = 0; i < results.length; i++) {
+                        var skillName = results[i].Name;
+                        savedSkillNames.push(skillName);
+                    }
+                    console.log(savedSkillNames)
+                },
+                error: function(oError) {
+                    sap.m.MessageToast.show("Error retrieving existing skill names.");
+                }
+            });
         
         
             var cancelButton = new sap.m.Button({
@@ -78,6 +98,12 @@ sap.ui.define([
                 text: "Save",
                 type: sap.m.ButtonType.Accept,
                 press: function() {
+                    var newSkillName = sap.ui.getCore().byId("nameSelect").getSelectedItem().getText(); 
+                    
+                    if(isSkillNameAlreadyCreated(newSkillName)){
+                        new sap.m.MessageToast.show("This skill is already being created.");
+                    }else{
+                    
                     var oNewTable = {
                         Name: sap.ui.getCore().byId("nameSelect").getSelectedItem().getText(),
                         SkillLevel: sap.ui.getCore().byId("skillLevelSelect").getSelectedItem().getText(), 
@@ -95,7 +121,7 @@ sap.ui.define([
                         error: function(oError) {
                             sap.m.MessageToast.show("Error during skill creation.");
                         }
-                    });
+                    })};
                 }
             });
         
