@@ -14,7 +14,7 @@
     <edmx:DataServices>
         <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
             <Annotations Target="Z_SS23_T2_SRV.SkillCon">
-                 <Annotation Term="UI.FieldGroup" Qualifier="Filters">
+                   <Annotation Term="UI.FieldGroup" Qualifier="Filters">
                     <Record Type="UI.FieldGroupType">
                         <PropertyValue Property="Label" String="{@i18n>filters}"/>
                         <PropertyValue Property="Data">
@@ -30,7 +30,7 @@
                             </Collection>
                         </PropertyValue>
                     </Record>
-                </Annotation>
+                </Annotation>  
 
                 <Annotation Term="UI.LineItem">
                     <Collection>
@@ -68,7 +68,7 @@
                     </Record>
                 </Annotation>
             </Annotations>
-            <Annotations Target="Z_SS23_T2_SRV.SkillCon/SName">
+              <Annotations Target="Z_SS23_T2_SRV.SkillCon/SName">
                 <Annotation Term="Common.ValueList">
                     <Record Type="Common.ValueListType">
                         <PropertyValue Property="Parameters">
@@ -99,7 +99,7 @@
                         <PropertyValue Property="SearchSupported" Bool="true"/>
                     </Record>
                 </Annotation>
-            </Annotations>
+            </Annotations> 
         </Schema>
     </edmx:DataServices>
 </edmx:Edmx>

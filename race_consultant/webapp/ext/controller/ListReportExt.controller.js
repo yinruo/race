@@ -126,7 +126,7 @@ sap.ui.define([
             });
         
             var dialog = new Dialog("dialogCancellationReasons", {
-                title: "Create Table",
+                title: "Create Skill",
                 modal: true,
                 contentWidth: "1em",
                 buttons: [saveButton, cancelButton],
@@ -268,14 +268,14 @@ sap.ui.define([
                             that.getView().getModel().refresh();
                         },
                         error :function(oError){
-                            sap.m.MessageToast.show("Error during table update.")
+                            sap.m.MessageToast.show("Error during skill update.")
                         }
                     })
                 }
             });
         
             var dialog = new Dialog("dialogCancellationReasons", {
-                title: "Update Table",
+                title: "Update Skill",
                 modal: true,
                 contentWidth: "1em",
                 buttons: [updateButton, cancelButton],

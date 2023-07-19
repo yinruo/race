@@ -15,112 +15,119 @@ sap.ui.define([
     'use strict';
 
     return {
+        // Function to handle the press event on an email-related button
         onEmailPress: function (oEvent) {
             var oButton = oEvent.getSource();
-            var oTable = oButton.getParent().getParent(); 
-            var aSelectedItems = oTable.getSelectedItems();
-            
+            var oTable = oButton.getParent().getParent(); // Assuming the button is inside two layers of parent containers (Table > Column > Button)
+            var aSelectedItems = oTable.getSelectedItems(); // Get the selected items in the table
+
+            // If no items are selected, show a toast message and return
             if (aSelectedItems.length === 0) {
                 MessageToast.show("Please select an item from the table.");
                 return;
             }
 
             var oSelectedItem = aSelectedItems[0]; // Assuming only one item can be selected
-            var oContext = oSelectedItem.getBindingContext();
-            var sEmail = oContext.getProperty("CEmail");
-            var sName = oContext.getProperty("CName");
+            var oContext = oSelectedItem.getBindingContext(); // Get the binding context of the selected item
+            var sEmail = oContext.getProperty("CEmail"); // Get the value of "CEmail" property from the context
+            var sName = oContext.getProperty("CName"); // Get the value of "CName" property from the context
+            // Trigger the email client with the email address, subject, and body
             sap.m.URLHelper.triggerEmail(sEmail, "Request: Application and CV needed for potential job offer", "Dear " + sName + ",");
         },
+
+        // Function to handle the press event on a certificate-related button
         onCertificatePress: function(oEvent) {
             var oButton = oEvent.getSource();
-            var oTable = oButton.getParent().getParent(); 
-            var aSelectedItems = oTable.getSelectedItems();
-            
+            var oTable = oButton.getParent().getParent(); // Assuming the button is inside two layers of parent containers (Table > Column > Button)
+            var aSelectedItems = oTable.getSelectedItems(); // Get the selected items in the table
+
+            // If no items are selected, show a toast message and return
             if (aSelectedItems.length === 0) {
                 MessageToast.show("Please select an item from the table.");
                 return;
             }
 
             var oSelectedItem = aSelectedItems[0]; // Assuming only one item can be selected
-            var oContext = oSelectedItem.getBindingContext();
-            var certiLink = oContext.getProperty("CertiLink");
+            var oContext = oSelectedItem.getBindingContext(); // Get the binding context of the selected item
+            var certiLink = oContext.getProperty("CertiLink"); // Get the value of "CertiLink" property from the context
+            // Open the certificate link in a new window
             window.open(certiLink);
         },
 
+        // Function to handle the press event on a certification-related button (an alternative implementation)
         handleCertificationPress: function(oEvent) {
-            var sCertiLink = oEvent.getSource().getBindingContext().getProperty("CertiLink");
+            var sCertiLink = oEvent.getSource().getBindingContext().getProperty("CertiLink"); // Get the value of "CertiLink" property from the context of the button
+            // Open the certificate link in a new window
             window.open(sCertiLink);
         },
+
+        // Function to handle the press event on an email-related button (an alternative implementation)
         handleEmailPress: function(oEvent) {
             var oButton = oEvent.getSource();
-            var oListItem = oButton.getParent(); 
-            var oContext = oListItem.getBindingContext();
-            var sEmail = oContext.getProperty("CEmail");
-            console.log(sEmail)
-            var sName = oEvent.getSource().getBindingContext().getProperty("CName");
+            var oListItem = oButton.getParent(); // Assuming the button is inside a list item
+            var oContext = oListItem.getBindingContext(); // Get the binding context of the list item
+            var sEmail = oContext.getProperty("CEmail"); // Get the value of "CEmail" property from the context
+            console.log(sEmail); // Log the email address to the console (for debugging purposes)
+            var sName = oEvent.getSource().getBindingContext().getProperty("CName"); // Get the value of "CName" property from the context of the button
+            // Trigger the email client with the email address, subject, and body
             sap.m.URLHelper.triggerEmail(sEmail, "Request: Application and CV needed for potential job offer", "Dear " + sName + ",");
         },
+        getCustomAppStateDataExtension: function (oCustomData) {
+            //the content of the custom field will be stored in the app state, so that it can be restored later, for example after a back navigation.
+            //The developer has to ensure that the content of the field is stored in the object that is passed to this method.
+            if (oCustomData) {
+                var oCustomField1 = this.oView.byId("skillFilter");
+                if (oCustomField1) {
+                    oCustomData.skillFilter = oCustomField1.getSelectedKey();
+                }
+                var oCustomField2 = this.oView.byId("skillLevelFilter");
+                if (oCustomField2) {
+                    oCustomData.skillLevelFilter = oCustomField2.getSelectedKey();
+                }
 
-        skillPie: function(oEvent) {
-      // Sample data
-      var data = [
-        { fruit: "Apple", value: 32 },
-        { fruit: "Pear", value: 20 },
-        { fruit: "Grape", value: 10 },
-      ];
+            }
+        },
+        restoreCustomAppStateDataExtension: function (oCustomData) {
+            //in order to restore the content of the custom field in the filter bar, for example after a back navigation,
+            //an object with the content is handed over to this method. Now the developer has to ensure that the content of the custom filter is set to the control
+            if (oCustomData) {
+                if (oCustomData.skillFilter) {
+                    var oComboBox = this.oView.byId("skillFilter");
+                    oComboBox.setSelectedKey(
+                        oCustomData.skillFilter
+                    );
+                    
+                }
+                if (oCustomData.skillLevelFilter) {
+                    var oComboBox = this.oView.byId("skillLevelFilter");
+                    oComboBox.setSelectedKey(
+                        oCustomData.skillLevelFilter
+                    );
+                    
+                }
+            }
+        },
+        onBeforeRebindTableExtension: function(oEvent) {
+            var oBindingParams = oEvent.getParameter("bindingParams");
+            oBindingParams.parameters = oBindingParams.parameters || {};
 
-      // Create a JSONModel with the data
-      var oModel = new sap.ui.model.json.JSONModel();
-      oModel.setData({ data: data });
+            var oSmartTable = oEvent.getSource();
+            var oSmartFilterBar = this.byId(oSmartTable.getSmartFilterId());
+            if (oSmartFilterBar instanceof SmartFilterBar) {
+                var oCustomControl = oSmartFilterBar.getControlByKey("skillFilter");
+                var oCustomControl2 = oSmartFilterBar.getControlByKey("skillLevelFilter");
+                console.log(oCustomControl )
+                console.log(oCustomControl2 )
+                if (oCustomControl instanceof ComboBox || oCustomControl2 instanceof ComboBox) {
+                    var vCategory = oCustomControl.getSelectedKey();
+                    var vCategory2 = oCustomControl2.getSelectedKey();
 
-      // Create the VizFrame control
-      var oVizFrame = new VizFrame({
-        width: "100%",
-        height: "300px",
-        vizType: "pie",
-        dataset: new sap.viz.ui5.data.FlattenedDataset({
-          dimensions: [
-            new DimensionDefinition({
-              name: "Fruit",
-              value: "{fruit}",
-            }),
-          ],
-          measures: [
-            new MeasureDefinition({
-              name: "Value",
-              value: "{value}",
-            }),
-          ],
-          data: { path: "/data" },
-        }),
-      });
-      console.log(oVizFrame);
-
-      // Set the JSONModel to the VizFrame
-      oVizFrame.setModel(oModel);
-
-      // Create and open the dialog
-      if (!this._oChartDialog) {
-        this._oChartDialog = new sap.m.Dialog({
-          title: "Pie Chart",
-          contentWidth: "400px",
-          contentHeight: "500px",
-          content: oVizFrame,
-          beginButton: new sap.m.Button({
-            text: "Close",
-            press: function () {
-              this._oChartDialog.close();
-            }.bind(this),
-          }),
-        });
-      }
-
-      this._oChartDialog.open();
-    }
+                    oBindingParams.filters.push(new Filter("SName", "EQ", vCategory));
 
 
-  
-
+                }
+            }
+        }
     };
 
      

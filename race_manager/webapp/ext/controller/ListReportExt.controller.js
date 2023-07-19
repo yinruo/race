@@ -1,14 +1,20 @@
+// Define an anonymous function with dependencies
 sap.ui.define([
-    "sap/m/MessageToast",
-    "sap/m/Dialog"
+    "sap/m/MessageToast",      // Importing the MessageToast module for displaying toast messages
+    "sap/m/Dialog"             // Importing the Dialog module for creating dialog boxes
 ], function(MessageToast, Dialog) {
     'use strict';
 
     return {
+        // Function to create a new skill entry
         createSkill: function(oEvent) {
-            //MessageToast.show("Custom handler invoked.");
+            // Commented out message toast for custom handler invocation
+            // MessageToast.show("Custom handler invoked.");
+
             var that = this;
             var oModel = new sap.ui.model.odata.v2.ODataModel("/sap/opu/odata/sap/Z_SS23_T2_SRV");
+
+            // Create a Cancel button for the dialog
             var cancelButton = new sap.m.Button({
                 text: "Cancel",
                 type: sap.m.ButtonType.Reject,
@@ -17,16 +23,18 @@ sap.ui.define([
                     dialog.destroy();
                 }
             });
-            
-        
+
+            // Create a Save button for the dialog
             var saveButton = new sap.m.Button({
                 text: "Save",
                 type: sap.m.ButtonType.Accept,
                 press: function() {
+                    // Get the value entered for the skill name from the input field
                     var oNewTable = {
                         Name: sap.ui.getCore().byId("name").getValue(),
                     };
-        
+
+                    // Create a new entry in the "SNameSet" entity with the provided skill name
                     oModel.create('/SNameSet', oNewTable, {
                         success: function(oData, oResponce) {
                             sap.m.MessageToast.show("Skill successfully created!");
@@ -39,13 +47,15 @@ sap.ui.define([
                     });
                 }
             });
-        
+
+            // Create a dialog box for adding a new skill
             var dialog = new Dialog("dialogCancellationReasons", {
                 title: "Create Table",
                 modal: true,
                 contentWidth: "1em",
                 buttons: [saveButton, cancelButton],
                 content: [
+                    // Input field for entering the skill name
                     new sap.m.Label({
                         text: "Skill name"
                     }),
@@ -53,17 +63,18 @@ sap.ui.define([
                         maxLength: 100,
                         id: "name",
                     })
-                    
                 ],
                 afterClose: function() {
-                    dialog.destroy(); 
+                    dialog.destroy(); // Clean up the dialog when it is closed
                 }
             });
-            dialog.open();
-
+            dialog.open(); // Open the dialog for user interaction
         },
+
+        // Function to handle editing of a skill entry (currently only displays a message toast)
         editSkill: function(oEvent) {
-        MessageToast.show("Custom handler invoked.");
+            // Display a message toast indicating that the custom handler has been invoked
+            MessageToast.show("Custom handler invoked.");
         }
     };
 });
