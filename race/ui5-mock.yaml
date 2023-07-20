@@ -45,3 +45,11 @@ server:
       afterMiddleware: fiori-tools-appreload
       configuration:
         component: race
+    - name: fiori-tools-servestatic
+      afterMiddleware: compression
+      configuration:
+        paths:
+          - path: /resources/racemanager
+            src: ..\race_manager\webapp
+          - path: /appconfig
+            src: appconfig

@@ -47,7 +47,21 @@
                         "additionalParameters": "allowed"
                     }
                 }
+            },
+            "outbounds":{
+                "racemanager":{
+                    "semanticObject": "racemanager",
+                    "action": "manage",
+                    "parameters": {
+                        "preferredMode": {
+                            "value": {
+                               "value": "display"
+                            }
+                         }
+                    }
+                }
             }
+            
         }
     },
     "sap.ui": {
@@ -124,7 +138,14 @@
                         "sap.ui.generic.app": {
                             "SkillConSet": {
                                 "EntitySet": "SkillConSet",
-                                "Actions": {}
+                                "Actions": {
+                                    "navigate": {
+                                        "id": "navigateButton",
+                                        "text": "Navigate",
+                                        "press": "navigate",
+                                        "requiresSelection": false
+                                    }
+                                }
                             }
                         }
                     }

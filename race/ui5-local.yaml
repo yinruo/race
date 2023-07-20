@@ -44,3 +44,11 @@ server:
       configuration:
         component: race
         ui5Theme: sap_horizon
+    - name: fiori-tools-servestatic
+      afterMiddleware: compression
+      configuration:
+        paths:
+          - path: /resources/racemanager
+            src: ..\race_manager\webapp
+          - path: /appconfig
+            src: appconfig

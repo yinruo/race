@@ -1,0 +1,9 @@
+{
+  "applications": {
+    "race_manager-display": {
+      "additionalInformation": "SAPUI5.Component=racemanager",
+      "applicationType": "URL",
+      "url": "../resources/racemanager"
+    }
+  }
+}

@@ -69,12 +69,6 @@ sap.ui.define([
                 }
             });
             dialog.open(); // Open the dialog for user interaction
-        },
-
-        // Function to handle editing of a skill entry (currently only displays a message toast)
-        editSkill: function(oEvent) {
-            // Display a message toast indicating that the custom handler has been invoked
-            MessageToast.show("Custom handler invoked.");
         }
     };
 });

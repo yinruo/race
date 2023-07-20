@@ -114,7 +114,7 @@
                                 "Actions": {
                                     "createSkill": {
                                         "id": "createSkillButton",
-                                        "text": "create",
+                                        "text": "Create",
                                         "press": "createSkill",
                                         "requiresSelection": false,
                                         "logicalAction": "Create"

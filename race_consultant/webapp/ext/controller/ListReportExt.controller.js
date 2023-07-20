@@ -74,9 +74,10 @@ sap.ui.define([
                 success: function(oData) {
                     var results = oData.results;
                     for (var i = 0; i < results.length; i++) {
+                        if (results[i].ConId== '001'){
                         var skillName = results[i].Name;
                         savedSkillNames.push(skillName);
-                    }
+                    }}
                     console.log(savedSkillNames)
                 },
                 error: function(oError) {

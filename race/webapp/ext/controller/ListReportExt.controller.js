@@ -71,6 +71,14 @@ sap.ui.define([
             var sName = oEvent.getSource().getBindingContext().getProperty("CName"); // Get the value of "CName" property from the context of the button
             // Trigger the email client with the email address, subject, and body
             sap.m.URLHelper.triggerEmail(sEmail, "Request: Application and CV needed for potential job offer", "Dear " + sName + ",");
+        },
+        navigate: function(oEvent) {
+            var vHash = 'racemanager-display';
+            sap.ushell.Container.getService("CrossApplicationNavigation").toExternal({
+                target: {
+                  shellHash: vHash
+                }
+              })
         }
     };
 

@@ -49,7 +49,7 @@
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Label" String="{@i18n>level}"/>
                             <PropertyValue Property="Value" Path = "SLevel"/>
-                        </Record>
+                        </Record>  
                     </Collection>
                 </Annotation>
                 <Annotation Term="UI.Facets">

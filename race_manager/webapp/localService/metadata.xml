@@ -17,12 +17,12 @@
                 <Key>
                     <PropertyRef Name="Id"/>
                 </Key>
-                <Property Name="CertiName" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="CERTI_NAME" sap:filterable="false"/>
-                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="ID" sap:filterable="false"/>
-                <Property Name="CertiLink" Type="Edm.String" MaxLength="100" sap:unicode="false" sap:label="CERTI_LINK" sap:filterable="false"/>
-                <Property Name="Name" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="NAME" sap:filterable="false"/>
-                <Property Name="SkillLevel" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="skill level" sap:filterable="false"/>
-                <Property Name="ConId" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Data element for ID"/>
+                <Property Name="CertiName" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="CERTI_NAME" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="ID" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="CertiLink" Type="Edm.String" MaxLength="100" sap:unicode="false" sap:label="CERTI_LINK" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Name" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="NAME" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="SkillLevel" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="skill level" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="ConId" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Data element for ID" sap:updatable="false"/>
             </EntityType>
             <EntityType Name="Manager" sap:content-version="1">
                 <Key>
@@ -96,9 +96,9 @@
             </Association>
             <EntityContainer Name="Z_SS23_T2_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
                 <EntitySet Name="ConsultantSet" EntityType="Z_SS23_T2_SRV.Consultant" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:requires-filter="true" sap:content-version="1"/>
-                <EntitySet Name="SkillSet" EntityType="Z_SS23_T2_SRV.Skill" sap:searchable="true" sap:pageable="false" sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="SkillSet" EntityType="Z_SS23_T2_SRV.Skill" sap:updatable="false" sap:pageable="false" sap:requires-filter="true" sap:content-version="1"/>
                 <EntitySet Name="ManagerSet" EntityType="Z_SS23_T2_SRV.Manager" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:requires-filter="true" sap:content-version="1"/>
-                <EntitySet Name="SNameSet" EntityType="Z_SS23_T2_SRV.SName" sap:content-version="1"/>
+                <EntitySet Name="SNameSet" EntityType="Z_SS23_T2_SRV.SName" sap:updatable="false" sap:content-version="1"/>
                 <EntitySet Name="SkillConSet" EntityType="Z_SS23_T2_SRV.SkillCon" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
                 <EntitySet Name="SkLevelSet" EntityType="Z_SS23_T2_SRV.SkLevel" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
                 <AssociationSet Name="SkLevelToSkillConSet" Association="Z_SS23_T2_SRV.SkLevelToSkillCon" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
